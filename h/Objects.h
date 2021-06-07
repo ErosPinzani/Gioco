@@ -11,13 +11,14 @@
 class Objects: public Entity {
 public:
     enum Type {
-        healPack,
-        rangedWeapon,
+        medikit,
+        rangedWeaponSt,
+        rangedWeaponAoe,
         meleeWeapon,
         Shield
     };
 
-    Object();
+    Objects();
 
     //virtual ~Object() = 0;
     virtual bool use();

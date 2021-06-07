@@ -2,9 +2,9 @@
 // Created by erosp on 06/06/2021.
 //
 
-#include "..\h\Medipack.h"
+#include "..\h\Medikit.h"
 
-Medipack::Medipack(const TextureHolder &textures): textures(textures) {
+Medikit::Medikit(const TextureHolder &textures): textures(textures) {
 
     textures = textures.get(Textures::healPack);
     sprite.setTexture(texture);
@@ -20,7 +20,7 @@ Medipack::Medipack(const TextureHolder &textures): textures(textures) {
     counterLifeTime = 1;
 }
 
-void Medipack::Update() {
+void Medikit::Update() {
     rect.setPosition(position);
     sprite.setPosition(rect.getPosition());
     //ConsumableObject::update();

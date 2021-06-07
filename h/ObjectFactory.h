@@ -7,6 +7,10 @@
 
 #include <memory>
 #include "Objects.h"
+#include "Medikit.h"
+#include "MeleeWeapon.h"
+#include "RangedAoeWeapon.h"
+#include "RangedStWeapon.h"
 
 class ObjectFactory: public Object {
 public:

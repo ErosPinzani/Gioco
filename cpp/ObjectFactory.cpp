@@ -4,23 +4,27 @@
 
 #include "..\h\ObjectFactory.h"
 
-std::shared_ptr<Object> ObjectFactory::createObject(Object::Type type, const TextureHolder &textures) {
-    std::shared_ptr<Object> object;
+std::shared_ptr<Objects> ObjectFactory::createObject(Objects::Type type, const TextureHolder &textures) {
+    std::shared_ptr<Objects> object;
 
-    if ( type == Object::Type::rangedWeapon ) {
-        object = std::make_shared<RangedWeapon>(textures, RangedWeapon::Type::energyShooter);
-    } else if(type== Object::Type::meleeWeapon ) {
-        object = std::make_shared<MeleeWeapon>(textures);
-    } else if(type== Object::Type::healPack ) {
-        object = std::make_shared<Healpack>(textures);
-    } else if( type == Object::Type::Shield ) {}
+    if ( type == Objects::Type::rangedWeaponSt ) {
+        object = std::make_shared<RangedStWeapon>(textures, RangedStWeapon::Type::???);
+    }else if(type == Objects::Type::rangedWeaponAoe ) {
+        object = std::make_shared<RangedAoeWeapon>(textures, RangedAoeWeapon::Type::???);
+    } else if(type == Objects::Type::meleeWeapon ) {
+        object = std::make_shared<MeleeWeapon>(textures, MeleeWeapon::Type::???);
+    } else if( type == Objects::Type::medikit ) {
+        object = std::make_shared<Medikit>(textures)
+    } else if( type == Objects::Type::coins ) {
+        object = std::make_shared<Coins>(textures)
+    }
 
     return object;
 }
 
-std::shared_ptr<Object> ObjectFactory::createObject(const TextureHolder &textures) {
-    std::shared_ptr<Object> object;
-    Object::Type type = typeDrop();
+std::shared_ptr<Objects> ObjectFactory::createObject(const TextureHolder &textures) {
+    std::shared_ptr<Objects> object;
+    Objects::Type type = typeDrop();
 
     if(type == 0 || type == 1) { // || type == 2 || type == 3) {
         object = createObject(type, textures);
@@ -29,14 +33,14 @@ std::shared_ptr<Object> ObjectFactory::createObject(const TextureHolder &texture
     return object;
 }
 
-Object::Type ObjectFactory::typeDrop() {
+Objects::Type ObjectFactory::typeDrop() {
     int random = generateRandom(100);
-    Object::Type typeSelected ;
+    Objects::Type typeSelected ;
 
     //15% to drop healpack
     if(random < 15) {
-        typeSelected = healPack;
-    } //50% to drop weapon
+        typeSelected = medikit;
+    } //50% to drop coins
     else if(random < 65) {
         typeSelected = rangedWeapon;
     }

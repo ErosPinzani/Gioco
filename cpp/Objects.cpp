@@ -4,23 +4,23 @@
 
 #include "..\h\Objects.h"
 
-Object::Object(): equipped(false) {}
+Objects::Objects(): equipped(false) {}
 
-void Object::get() {}
+void Objects::get() {}
 
-bool Object::use() {
+bool Objects::use() {
     return true;
 }
 
-void Object::leave() {}
+void Objects::leave() {}
 
-void Object::setPosition(sf::Vector2f vector) {
+void Objects::setPosition(sf::Vector2f vector) {
     position = vector;
     rect.setPosition(position);
     sprite.setPosition(rect.getPosition());
 }
 
-void Object::update() {
+void Objects::update() {
     counterLifeTime --;
     if(counterLifeTime<=0)
         active=false;
