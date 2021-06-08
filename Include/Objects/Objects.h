@@ -10,7 +10,7 @@
 
 class Objects: public Entity {
 public:
-    enum Type {
+    enum TypeObject {
         medikit,
         rangedWeaponSt,
         rangedWeaponAoe,
@@ -31,7 +31,7 @@ public:
 public:
     int counterLifeTime = 2;
 
-    Type type;
+    TypeObject type;
     std::string description;
 
     bool equipped;

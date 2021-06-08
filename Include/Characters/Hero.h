@@ -20,7 +20,6 @@ public:
     Hero();
     virtual bool interactWithObject(std::shared_ptr<Objects> object);
     //a movement that covers several tiles thanks to the ProtoBelt
-    void dash();
     void die() override;
     void update(sf::Time dt);
 

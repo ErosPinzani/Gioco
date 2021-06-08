@@ -21,26 +21,7 @@
 }*/
 
 Hero::Hero(){}
-/*
-Hero::Hero(HeroType heroType, const TextureHolder& textures, sf::Vector2u windowSize):textures(textures), counterWalk(0), delayWalk(false), delayMoreWalk(false), shooting(false), dead(false) {
-    this->windowSize.x = (int)windowSize.x;
-    this->windowSize.y = (int)windowSize.y;
 
-    rect.setPosition(windowSize.x/2.f,windowSize.y/2.f);
-    //rect.setPosition(generateRandom(800), generateRandom(800));
-    speedBasic = 2;
-    hp = 200;
-    hpMax = hp;
-    attackDamage = 0;
-
-    rect.setOrigin(32 / 2, 32 / 2);
-    sprite.setOrigin(32 / 2, 32 / 2);
-    sprite.setTextureRect(sf::IntRect(0,0,32,32));
-
-    texture = textures.get(toTextureID(heroType));
-    sprite.setTexture(texture);
-}
-*/
 void Hero::update(sf::Time dt) {
     //now sprite is linked to rect's position
     sprite.setPosition(rect.getPosition());
@@ -60,7 +41,7 @@ void Hero::update(sf::Time dt) {
         setDirection(Hero::right);
     }
     if(isMovingLeft) {
-        movements.x-=speedBasic+;
+        movements.x-=speedBasic;
         setDirection(Hero::left);
     }
 
@@ -119,7 +100,7 @@ bool Hero::useWeapon() {
 void Hero::die() {}
 
 void Hero::setPosition(sf::Vector2f movement) {
-    Character::setPosition(movement);
+    Characters::setPosition(movement);
     checkWorldBounds();
 }
 

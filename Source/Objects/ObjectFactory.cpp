@@ -4,18 +4,18 @@
 
 #include "../../Include/Objects/ObjectFactory.h"
 
-std::shared_ptr<Objects> ObjectFactory::createObject(Objects::Type type, const TextureHolder &textures) {
+std::shared_ptr<Objects> ObjectFactory::createObject(Objects::TypeObject type, const TextureHolder &textures) {
     std::shared_ptr<Objects> object;
 
-    if ( type == Objects::Type::rangedWeaponSt ) {
-        object = std::make_shared<RangedStWeapon>(textures, RangedStWeapon::Type::???);
-    }else if(type == Objects::Type::rangedWeaponAoe ) {
-        object = std::make_shared<RangedAoeWeapon>(textures, RangedAoeWeapon::Type::???);
-    } else if(type == Objects::Type::meleeWeapon ) {
-        object = std::make_shared<MeleeWeapon>(textures, MeleeWeapon::Type::???);
-    } else if( type == Objects::Type::medikit ) {
+    if ( type == Objects::TypeObject::rangedWeaponSt ) {
+        object = std::make_shared<RangedStWeapon>(textures, RangedStWeapon::TypeObject::???);
+    }else if(type == Objects::TypeObject::rangedWeaponAoe ) {
+        object = std::make_shared<RangedAoeWeapon>(textures, RangedAoeWeapon::TypeObject::???);
+    } else if(type == Objects::TypeObject::meleeWeapon ) {
+        object = std::make_shared<MeleeWeapon>(textures, MeleeWeapon::TypeObject::???);
+    } else if( type == Objects::TypeObject::medikit ) {
         object = std::make_shared<Medikit>(textures)
-    } else if( type == Objects::Type::coins ) {
+    } else if( type == Objects::TypeObject::coins ) {
         object = std::make_shared<Coins>(textures)
     }
 
@@ -42,7 +42,7 @@ Objects::TypeObject ObjectFactory::typeDrop() {
         typeSelected = medikit;
     } //50% to drop coins
     else if(random < 65) {
-        typeSelected = rangedWeapon;
+        typeSelected = coins;
     }
 
     return typeSelected;

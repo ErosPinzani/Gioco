@@ -3,7 +3,7 @@
 //
 
 #include <memory>
-#include "..\h\Game.h"
+#include "..\Include\Game.h"
 
 
 const sf::Time Game::TimePerFrame = sf::seconds(1.f / 80.f);

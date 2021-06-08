@@ -13,13 +13,13 @@
 #include "Weapons/RangedStWeapon.h"
 #include "../Random.h"
 
-class ObjectFactory: public Object {
+class ObjectFactory: public Objects {
 public:
-    std::shared_ptr<Object> createObject(Object::Type type, const TextureHolder&textures);
-    std::shared_ptr<Object> createObject(const TextureHolder&textures);
+    std::shared_ptr<Objects> createObject(Objects::TypeObject type, const TextureHolder&textures);
+    std::shared_ptr<Objects> createObject(const TextureHolder&textures);
 
 private:
-    Object::Type typeDrop();
+    Objects::TypeObject typeDrop();
 
 };
 

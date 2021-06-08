@@ -9,6 +9,9 @@
 
 class Weapon : public Objects {
 public:
+    enum weaponType{
+
+    };
     Weapon();
     void update() override;
     bool use() override;
