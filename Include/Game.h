@@ -23,7 +23,6 @@ private:
     void loadTextures();
     //void loadSound();
 
-private:
     std::shared_ptr<World> world;
     std::shared_ptr<sf::View> view;
     std::shared_ptr<Menu> startMenu;

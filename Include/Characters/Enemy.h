@@ -33,7 +33,8 @@ public:
 
     std::shared_ptr<Strategy> strategy;
 
-    //bool attackAvailable;
+    bool attackAvailable;
+    std::shared_ptr<Weapon> weapon;
 
     sf::Vector2f windowSize;
 

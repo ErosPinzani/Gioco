@@ -6,6 +6,7 @@
 #define GIOCO_CHARACTERS_H
 
 #include "../Entity.h"
+#include "../Objects/Weapons/Weapon.h"
 
 class Characters: public Entity{
 public:
