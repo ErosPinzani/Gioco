@@ -15,7 +15,50 @@ Textures::ID toTextureID(Hero::HeroType heroType) {
     }
 }
 
-Hero::Hero(){}
+Hero::Hero(HeroType heroType, const TextureHolder& textures, sf::Vector2u windowSize):textures(textures), counterWalk(0), delayWalk(false), delayMoreWalk(false), shooting(false), dead(false) {
+
+    this->heroType = heroType;
+    this->windowSize.x = (int)windowSize.x;
+    this->windowSize.y = (int)windowSize.y;
+    isMovingUp = false;
+    isMovingRight = false;
+    isMovingLeft = false;
+    isMovingDown = false;
+    active = true;
+
+    rect.setPosition(windowSize.x/2.f,windowSize.y/2.f);
+
+    rect.setOrigin(32 / 2, 32 / 2);
+    sprite.setOrigin(32 / 2, 32 / 2);
+    sprite.setTextureRect(sf::IntRect(0,0,32,32));
+
+    switch(heroType) {
+        case Hero::HeroType::close:
+            speedBasic = 5;
+            hp = 200;
+            hpMax = hp;
+            attackDamage = 0;
+            texture = textures.get(toTextureID(heroType));
+            sprite.setTexture(texture);
+            break;
+        case Hero::HeroType::St:
+            speedBasic = 2;
+            hp = 200;
+            hpMax = hp;
+            attackDamage = 0;
+            texture = textures.get(toTextureID(heroType));
+            sprite.setTexture(texture);
+            break;
+        case Hero::HeroType::Aoe:
+            speedBasic = 3;
+            hp = 200;
+            hpMax = hp;
+            attackDamage = 0;
+            texture = textures.get(toTextureID(heroType));
+            sprite.setTexture(texture);
+            break;
+    }
+}
 
 void Hero::update(sf::Time dt) {
     //now sprite is linked to rect's position

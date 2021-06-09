@@ -21,7 +21,7 @@ public:
         Aoe,
     };
 
-    Hero();
+    Hero(HeroType heroType, const TextureHolder& textures, sf::Vector2u windowSize);
     virtual bool interactWithObject(std::shared_ptr<Objects> object);
     bool useWeapon();
     //a movement that covers several tiles thanks to the ProtoBelt
