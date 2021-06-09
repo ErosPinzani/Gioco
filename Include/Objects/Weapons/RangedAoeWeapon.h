@@ -5,7 +5,9 @@
 #ifndef CHARACTERS_H_RANGEDAOEWEAPON_H
 #define CHARACTERS_H_RANGEDAOEWEAPON_H
 
+#include <iostream>
 #include "Weapon.h"
+//#include "Bullets.h"
 
 class RangedAoeWeapon: public Weapon {
 public:

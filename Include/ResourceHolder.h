@@ -6,7 +6,7 @@
 #define GAME_H_RESOURCEHOLDER_H
 
 #include <iostream>
-#include <SFML/Graphics.hpp>
+#include <SFML\Graphics.hpp>
 #include <map>
 #include <string>
 #include <memory>

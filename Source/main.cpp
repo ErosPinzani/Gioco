@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "../Include/Game.h"
 
 int main() {

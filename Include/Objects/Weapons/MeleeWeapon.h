@@ -5,7 +5,9 @@
 #ifndef CHARACTERS_H_MELEEWEAPON_H
 #define CHARACTERS_H_MELEEWEAPON_H
 
+#include "..\Objects.h"
 #include "Weapon.h"
+//#include "Bullets.h"
 
 class MeleeWeapon: public Weapon {
 public:

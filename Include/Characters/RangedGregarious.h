@@ -6,6 +6,7 @@
 #define MAIN_CPP_RANGEDGREGARIOUS_H
 
 #include "Enemy.h"
+#include "..\..\Include\Objects\Weapons\RangedStWeapon.h"
 
 class RangedGregarious: public Enemy {
 public:

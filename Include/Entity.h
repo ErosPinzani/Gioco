@@ -6,7 +6,7 @@
 #define GIOCO_ENTITY_H
 
 #include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
+
 
 class Entity{
 public:

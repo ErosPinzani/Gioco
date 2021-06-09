@@ -2,7 +2,6 @@
 // Created by erosp on 05/06/2021.
 //
 
-#include <iostream>
 #include "../../Include/Characters/Enemy.h"
 
 Enemy::Enemy() {}

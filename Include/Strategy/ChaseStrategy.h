@@ -5,6 +5,7 @@
 #ifndef MAIN_CPP_CHASESTRATEGY_H
 #define MAIN_CPP_CHASESTRATEGY_H
 
+#include <SFML\Graphics.hpp>
 #include "Strategy.h"
 #include <cmath>
 

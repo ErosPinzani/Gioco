@@ -6,7 +6,7 @@
 #define CHARACTERS_H_OBJECTS_H
 
 #include <string>
-#include "../Entity.h"
+#include "..\Entity.h"
 
 class Objects: public Entity {
 public:

@@ -6,7 +6,8 @@
 #define CHARACTERS_H_MEDIKIT_H
 
 #include "Consumables.h"
-
+#include "..\..\Include\ResourceIdentifier.h"
+#include "..\..\Include\ResourceHolder.h"
 
 class Medikit : public Consumables {
 public:

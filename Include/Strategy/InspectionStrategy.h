@@ -6,6 +6,7 @@
 #define MAIN_CPP_INSPECTIONSTRATEGY_H
 
 #include "Strategy.h"
+#include "..\Random.h"
 
 class InspectionStrategy : public Strategy {
 public:

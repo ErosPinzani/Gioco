@@ -2,23 +2,18 @@
 // Created by erosp on 03/06/2021.
 //
 
-#include <iostream>
 #include "../../Include/Characters/Hero.h"
 
-/*Textures::ID toTextureID(PlayerCharacter::SubType type) {
-    switch(type) {
-        case PlayerCharacter::SubType::blueHero:
-            return Textures::HeroBlue;
-        case PlayerCharacter::SubType::blondHero:
-            return Textures::HeroBlond;
-        case PlayerCharacter::SubType::whiteHero:
-            return Textures::HeroWhite;
-        case PlayerCharacter::SubType::grayHero:
-            return Textures::HeroGray;
-        case PlayerCharacter::SubType::starLord:
-            return Textures::StarLord;
+Textures::ID toTextureID(Hero::HeroType heroType) {
+    switch(heroType) {
+        case Hero::HeroType::close:
+            return Textures::???;
+        case Hero::HeroType::St:
+            return Textures::???;
+        case Hero::HeroType::Aoe:
+            return Textures::???;
     }
-}*/
+}
 
 Hero::Hero(){}
 
@@ -66,25 +61,21 @@ void Hero::update(sf::Time dt) {
     }
 }
 
-bool Hero::interactWithObject(std::shared_ptr<Object> object) {
+bool Hero::interactWithObject(std::shared_ptr<Objects> object) {
+    std::shared_ptr<Medikit> newMedikit = std::dynamic_pointer_cast<Medikit>(object);
+    if(newMedikit != nullptr) {
+        hp = hp + newMedikit->powerUp;
+        if(hp > hpMax)
+            hp = hpMax;
 
-    std::shared_ptr<Weapon> newWeapon = std::dynamic_pointer_cast<Weapon>(object);
-    if(newWeapon != nullptr) {
-        changeWeapon(newWeapon);
-
-    } else {
-        std::shared_ptr<Healpack> newHeal = std::dynamic_pointer_cast<Healpack>(object);
-        if(newHeal != nullptr) {
-            hp = hp + newHeal->powerUp;
-            if(hp > hpMax)
-                hp = hpMax;
-
-            newHeal->counterLifeTime--;
-            display();
-            //needs not to be equipped for being displayed
-            newHeal->active = false;
-        }
+        newMedikit->counterLifeTime--;
+        display();
+        //needs not to be equipped for being displayed
+        newMedikit->active = false;
     }
+
+    //TODO Aggiungere parte con coin
+
     return true;
 }
 
@@ -92,7 +83,7 @@ bool Hero::useWeapon() {
     if (weapon->use())
         return true;
     else {
-        std::cout<<"Something went wrong with weapon usage"<<endl;
+        std::cout<<"Something went wrong with weapon usage"<<std::endl;
         return false;
     }
 }
@@ -100,8 +91,8 @@ bool Hero::useWeapon() {
 void Hero::die() {}
 
 void Hero::setPosition(sf::Vector2f movement) {
-    Characters::setPosition(movement);
-    checkWorldBounds();
+    Characters::setPositionV(movement);
+    checkWorldWalls();
 }
 
 void Hero::checkWorldWalls() {

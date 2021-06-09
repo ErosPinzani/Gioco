@@ -5,8 +5,11 @@
 #ifndef GIOCO_CHARACTERS_H
 #define GIOCO_CHARACTERS_H
 
-#include "../Entity.h"
-#include "../Objects/Weapons/Weapon.h"
+#include <SFML\System.hpp>
+#include "..\Entity.h"
+#include "..\Objects\Weapons\Weapon.h"
+#include "..\ResourceHolder.h"
+#include "..\ResourceIdentifier.h"
 
 class Characters: public Entity{
 public:

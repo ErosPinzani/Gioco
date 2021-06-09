@@ -5,7 +5,8 @@
 #ifndef GIOCO_GAME_H
 #define GIOCO_GAME_H
 
-#include <SFML/Graphics.hpp>
+#include "World.h"
+#include "Menu.h"
 
 class Game {
 public:

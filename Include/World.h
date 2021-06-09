@@ -7,16 +7,19 @@
 
 #include <string>
 #include <SFML/Audio.hpp>
-#include <iostream>
 
-#include "Characters/Gregarious.h"
-#include "Characters/RangedGregarious.h"
-//#include "EnemyFactory.h"
+#include "Characters\AoeRanged.h"
+#include "Characters\StRanged.h"
+#include "Characters\Melee.h"
+#include "Characters\Gregarious.h"
+#include "Characters\RangedGregarious.h"
+#include "Characters\EnemyFactory.h"
 //#include "ProceduralMap.h"
 //#include "textDisplay.h"
-//#include "Characters/EnemyFactory.h"
-#include "Objects/Medikit.h"
-#include "Objects/ObjectFactory.h"
+//#include "Characters\EnemyFactory.h"
+#include "Objects\Medikit.h"
+//#include "Objects\Coin.h"
+#include "Objects\ObjectFactory.h"
 
 class World {
 public:

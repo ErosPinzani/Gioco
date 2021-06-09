@@ -7,9 +7,9 @@
 
 #include <memory>
 #include "Characters.h"
-#include "../Strategy/InspectionStrategy.h"
-#include "../Strategy/ChaseStrategy.h"
-#include "../Random.h"
+#include "..\Strategy\InspectionStrategy.h"
+#include "..\Strategy\ChaseStrategy.h"
+#include "..\Random.h"
 
 class Enemy : public Characters {
 public:

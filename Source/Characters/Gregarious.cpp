@@ -2,7 +2,6 @@
 // Created by erosp on 06/06/2021.
 //
 
-#include <iostream>
 #include "../../Include/Characters/Gregarious.h"
 
 Gregarious::Gregarious(const TextureHolder &textures, sf::Vector2u windowSize, std::shared_ptr<Strategy> strategy):textures(textures) {

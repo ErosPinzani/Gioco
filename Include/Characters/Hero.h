@@ -5,9 +5,13 @@
 #ifndef GIOCO_HERO_H
 #define GIOCO_HERO_H
 
-#include <memory>
+#include <string>
 #include "Characters.h"
-#include "../Objects/Objects.h"
+#include "..\Objects\Weapons\MeleeWeapon.h"
+#include "..\Objects\Weapons\RangedStWeapon.h"
+#include "..\Objects\Weapons\RangedAoeWeapon.h"
+#include "..\Objects\Medikit.h"
+//#include "..\Objects\Coin.h"
 
 class Hero: public Characters{
 public:
@@ -19,6 +23,7 @@ public:
 
     Hero();
     virtual bool interactWithObject(std::shared_ptr<Objects> object);
+    bool useWeapon();
     //a movement that covers several tiles thanks to the ProtoBelt
     void die() override;
     void update(sf::Time dt);
@@ -33,6 +38,9 @@ public:
     float getSpeed() const;
     void setSpeed(int speed);
 
+    std::shared_ptr<Weapon> weapon;
+    bool shooting;
+    HeroType heroType;
     bool dead;
 protected:
     sf::Vector2u windowSize;
