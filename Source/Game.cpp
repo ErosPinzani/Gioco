@@ -178,7 +178,7 @@ void Game::processEvents(sf::Clock &shootingClock) {
 
 void Game::update(sf::Time deltaTime) {
     world->update(deltaTime);
-    view->setCenter(world->hero->rect.getPosition());
+    view->setCenter(world->player->rect.getPosition());
     view->setSize(sf::Vector2f(mWindow->getSize().x / 2, mWindow->getSize().y / 2));
 }
 

@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include "Weapon.h"
-//#include "Bullets.h"
+#include "Bullets.h"
 
 class RangedAoeWeapon: public Weapon {
 public:
@@ -16,7 +16,7 @@ public:
 
 public:
     TypeObject type;
-    Projectile::Type projectileType;
+    Bullets::BulletType bulletType;
 
 private:
     const TextureHolder& textures;

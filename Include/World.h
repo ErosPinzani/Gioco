@@ -8,15 +8,12 @@
 #include <string>
 #include <SFML/Audio.hpp>
 
-#include "Characters\AoeRanged.h"
-#include "Characters\StRanged.h"
-#include "Characters\Melee.h"
+#include "Characters\Hero.h"
 #include "Characters\Gregarious.h"
 #include "Characters\RangedGregarious.h"
 #include "Characters\EnemyFactory.h"
-//#include "ProceduralMap.h"
-//#include "textDisplay.h"
-//#include "Characters\EnemyFactory.h"
+#include "Map.h"
+#include "TextDisplay.h"
 #include "Objects\Medikit.h"
 //#include "Objects\Coin.h"
 #include "Objects\ObjectFactory.h"
@@ -60,13 +57,13 @@ public:
 
     std::shared_ptr<Map> map;
 
-    sf::Font mainFon;
+    sf::Font mainFont;
 
     const TextureHolder& textures;
     //this holds all the texts
-    std::vector<std::shared_ptr<textDisplay>> textureDisplayArray;
-    std::shared_ptr<textDisplay> playerLife;
-    std::shared_ptr<textDisplay> demolisherAchievement;
+    std::vector<std::shared_ptr<TextDisplay>> textureDisplayArray;
+    std::shared_ptr<TextDisplay> playerLife;
+    std::shared_ptr<TextDisplay> demolisherAchievement;
 
     sf::Clock textureTimer;
 

@@ -15,7 +15,7 @@ World::World(std::shared_ptr<sf::RenderWindow> window, const TextureHolder &text
     //life text
     mainFont.loadFromFile("???");
 
-    playerLife = std::make_shared<textDisplay>();
+    playerLife = std::make_shared<TextDisplay>();
     playerLife->setString(std::to_string(player->hp));
     playerLife->text.setFont(mainFont);
     textureDisplayArray.emplace_back(playerLife);
