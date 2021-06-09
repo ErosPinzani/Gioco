@@ -7,7 +7,7 @@
 
 const sf::Time Game::TimePerFrame = sf::seconds(1.f / 80.f);
 
-Game::Game() : mWindow(new sf::RenderWindow(sf::VideoMode(1500, 850), "Berto's Adventure", sf::Style::Default)), mFont(),mStatisticsText(), mStatisticsUpdateTime(),mStatisticsNumFrames(0) {
+Game::Game() : mWindow(new sf::RenderWindow(sf::VideoMode(1500, 850), "Berto's Adventure", sf::Style::Default)), mFont() {
     //startMenu(mWindow->getSize().x, mWindow->getSize().y )
 
     loadTextures();

@@ -12,7 +12,7 @@ Textures::ID toTextureID(RangedStWeapon::TypeObject type) {
 
 RangedStWeapon::RangedStWeapon(const TextureHolder& textures, RangedStWeapon::TypeObject type): textures(textures), type(type) {
     this->type = Objects::TypeObject::rangedWeaponSt;
-    projectileType = Projectile::Type::???;
+    bulletType = Bullets::BulletType::???;
 
     //counterLifeTime = 2000;   use it to have a life time
     counterLifeTime = 1;

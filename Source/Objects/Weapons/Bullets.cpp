@@ -4,16 +4,16 @@
 
 #include "..\..\..\Include\Objects\Weapons\Bullets.h"
 
-Textures::ID toTextureID(Bullet::BulletType bulletType) {
+Textures::ID toTextureID(Bullets::BulletType bulletType) {
     switch(bulletType) {
-        case Bullet::BulletType::aoeBullet:
+        case Bullets::BulletType::aoeBullet:
             return Textures::???;
-        case Bullet::BulletType::stBullet:
+        case Bullets::BulletType::stBullet:
             return Textures::???;
     }
 }
 
-Bullet::Bullet(const TextureHolder& textures,  BulletType bulletType): textures(textures), active(false), delayWalk(false), delayMoreWalk (false), delayMoreMoreWalk(false), counterWalk(0), bulletType(bulletType) {
+Bullets::Bullets(const TextureHolder& textures,  BulletType bulletType): textures(textures), active(false), delayWalk(false), delayMoreWalk (false), delayMoreMoreWalk(false), counterWalk(0), bulletType(bulletType) {
     rect.setPosition(0, 0);
     texture = textures.get(toTextureID(bulletType));
     sprite.setTexture(texture);
@@ -38,7 +38,7 @@ Bullet::Bullet(const TextureHolder& textures,  BulletType bulletType): textures(
     }
 }
 
-void Bullet::setPosition(const sf::Vector2f &position, Direction direction) {
+void Bullets::setPosition(const sf::Vector2f &position, Direction direction) {
     active = true;
 
     this->direction = direction;
@@ -48,11 +48,11 @@ void Bullet::setPosition(const sf::Vector2f &position, Direction direction) {
     initialPos = rect.getPosition();
 }
 
-const sf::Sprite &Bullet::getSprite() {
+const sf::Sprite &Bullets::getSprite() {
     return Entity::getSprite();
 }
 
-void Bullet::update() {
+void Bullets::update() {
     switch(direction) {
         case up:
             rect.move(0,-movementSpeed);

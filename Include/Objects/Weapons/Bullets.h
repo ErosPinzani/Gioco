@@ -11,7 +11,7 @@
 #include "..\..\..\Include\ResourceHolder.h"
 #include "..\..\..\Include\ResourceIdentifier.h"
 
-class Bullet: public Entity {
+class Bullets: public Entity {
 public:
 
     enum BulletType {
@@ -19,7 +19,7 @@ public:
         stBullet
     };
 
-    Bullet(const TextureHolder& textures, BulletType type);
+    Bullets(const TextureHolder& textures, BulletType type);
     //when it's created sets the position with the Player
     virtual void setPosition(const sf::Vector2f& position, Direction direction);
     virtual const sf::Sprite&getSprite();

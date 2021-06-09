@@ -4,7 +4,7 @@
 
 #include "..\Include\World.h"
 
-World::World(std::shared_ptr<sf::RenderWindow> window, const TextureHolder &textures): window(window), textures(textures), player(new PlayerCharacter(PlayerCharacter::SubType::blueHero, textures,window->getSize())), map(new ProceduralMap(textures, Tile::BackGroundType::baseFloor, window->getSize())) {
+World::World(std::shared_ptr<sf::RenderWindow> window, const TextureHolder &textures): window(window), textures(textures), player(new Hero(Hero::HeroType::, textures,window->getSize())), map(new Map(textures, Tile::BackGroundType::baseFloor, window->getSize())) {
     //player related stuff
     int x,y;
     do{
@@ -118,9 +118,9 @@ void World::updateEnemies() {
         for ( auto iter = enemyArray.begin(); iter != enemyArray.end(); iter++ ) {
 
             //set player position to the strategy
-            auto ChaseStrategy = std::dynamic_pointer_cast<ChaseStrategy>(enemyArray[counter]->strategy);
-            if(ChaseStrategy != nullptr)
-                ChaseStrategy->playerPosition = player->getPosition();
+            auto chaseStrategy = std::dynamic_pointer_cast<ChaseStrategy>(enemyArray[counter]->strategy);
+            if(chaseStrategy != nullptr)
+                chaseStrategy->HeroPosition = player->getPosition();
 
             enemyArray[ counter ]->update();
 
@@ -131,7 +131,7 @@ void World::updateEnemies() {
                 //if it is in seek Strategy
                 auto chase = std::dynamic_pointer_cast<ChaseStrategy>(enemyArray[counter]->strategy);
                 if(chase != nullptr) {
-                    projectileEnemyArray.emplace_back(std::make_shared<Projectile>(textures, Projectile::redProjectile));
+                    projectileEnemyArray.emplace_back(std::make_shared<Bullets>(textures, Bullets::stBullet));
                     projectileEnemyArray.back()->setPosition(shooter->rect.getPosition(), shooter->direction);
                     projectileEnemyArray.back()->range = shooter->weapon->range;
                     projectileEnemyArray.back()->attackDamage = shooter->weapon->power;
@@ -330,14 +330,12 @@ void World::collisionPlayerProjectilesOnObjects() {
 
                     std::cout << "Collision!" << std::endl;
                     //change strategy
-                    std::shared_ptr<Strategy> newStrategy = std::make_shared<SeekStrategy>(window->getSize());
+                    std::shared_ptr<Strategy> newStrategy = std::make_shared<InspectionStrategy>(window->getSize());
                     enemyArray[counterEnemy]->strategy = newStrategy;
 
                     //check life and bar
                     enemyArray[counterEnemy]->display();
                     enemyArray[counterEnemy]->hp -= projectilePlayerArray[counterProjectiles]->attackDamage;
-                    if(enemyArray[counterEnemy]->hp <= 0)
-                        enemyArray[counterEnemy]->killedByRangedWeapon = true; // questo per progredire con l'achievement
                     projectilePlayerArray[counterProjectiles]->active = false;
                 }
                 counterEnemy++;
@@ -466,9 +464,17 @@ void World::checkCollection() {
 //gets the projectile back in the array of the world and sets the right position
 void World::useWeapon() {
     if( player->useWeapon()) {
-        std::shared_ptr<RangedWeapon> mWeapon = std::dynamic_pointer_cast<RangedWeapon>(player->weapon);
-        if(mWeapon != nullptr) {
-            projectilePlayerArray.emplace_back(std::make_shared<Projectile>(textures, mWeapon->projectileType));
+
+        std::shared_ptr<RangedStWeapon> mStWeapon = std::dynamic_pointer_cast<RangedStWeapon>(player->weapon);
+        if(mStWeapon != nullptr) {
+            projectilePlayerArray.emplace_back(std::make_shared<Bullets>(textures, mStWeapon->bulletType));
+            projectilePlayerArray.back()->setPosition(player->rect.getPosition(), player->direction);
+            projectilePlayerArray.back()->range = player->weapon->range;
+        }
+
+        std::shared_ptr<RangedAoeWeapon> mAoeWeapon = std::dynamic_pointer_cast<RangedAoeWeapon>(player->weapon);
+        if(mAoeWeapon != nullptr) {
+            projectilePlayerArray.emplace_back(std::make_shared<Bullets>(textures, mAoeWeapon->bulletType));
             projectilePlayerArray.back()->setPosition(player->rect.getPosition(), player->direction);
             projectilePlayerArray.back()->range = player->weapon->range;
         }

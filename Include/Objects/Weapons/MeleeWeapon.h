@@ -7,7 +7,7 @@
 
 #include "..\Objects.h"
 #include "Weapon.h"
-//#include "Bullets.h"
+#include "Bullets.h"
 
 class MeleeWeapon: public Weapon {
 public:

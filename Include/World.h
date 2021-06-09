@@ -58,7 +58,7 @@ public:
     std::shared_ptr<sf::RenderWindow> window;
     //std::vector<int> wallArray;
 
-    std::shared_ptr<ProceduralMap> map;
+    std::shared_ptr<Map> map;
 
     sf::Font mainFon;
 
@@ -74,8 +74,8 @@ public:
     EnemyFactory enemyFactory;
     ObjectFactory objectFactory;
 
-    std::vector<std::shared_ptr<Projectile>> projectilePlayerArray;
-    std::vector<std::shared_ptr<Projectile>> projectileEnemyArray;
+    std::vector<std::shared_ptr<Bullets>> projectilePlayerArray;
+    std::vector<std::shared_ptr<Bullets>> projectileEnemyArray;
     std::vector<std::shared_ptr<Objects>> collectableObject;
 
     std::shared_ptr<Medikit> medikit;
