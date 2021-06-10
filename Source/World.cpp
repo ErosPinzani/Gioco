@@ -4,7 +4,7 @@
 
 #include "..\Include\World.h"
 
-World::World(std::shared_ptr<sf::RenderWindow> window, const TextureHolder &textures): window(window), textures(textures), player(new Hero(Hero::HeroType::, textures,window->getSize())), map(new Map(textures, Tile::BackGroundType::baseFloor, window->getSize())) {
+World::World(std::shared_ptr<sf::RenderWindow> window, const TextureHolder &textures): window(window), textures(textures), player(new Hero(Hero::HeroType::St, textures,window->getSize())), map(new Map(textures, Tile::BackGroundType::baseFloor, window->getSize())) {
     //player related stuff
     int x,y;
     do{
