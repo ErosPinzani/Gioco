@@ -9,19 +9,9 @@ Textures::ID toTextureID(Tile::BackGroundType type) {
         case Tile::BackGroundType::labFloor:
             return Textures::ID::???;
         case Tile::BackGroundType ::woodFloor:
-            return Textures::ID ::???;//woodTile;
-        case Tile::BackGroundType ::metalFloor:
-            return Textures::ID::???;//metalTile;
-        case Tile::BackGroundType::cementFloor:
-            return Textures::ID::???;//cementTile;
-        case Tile::BackGroundType::baseFloor:
-            return Textures::ID::???;
-        case Tile::BackGroundType::metalWall:
-            return  Textures::ID::???;
-        default:
-            return Textures::ID::???;
+            return Textures::ID ::???;
     }
-};
+}
 
 Tile::Tile(const TextureHolder &textures, sf::Vector2f coordinates, BackGroundType btype): textures(textures), type(TileType::Floor), backGround(btype), coordinates(coordinates) {
     rect.setOrigin(32/2,32/2);

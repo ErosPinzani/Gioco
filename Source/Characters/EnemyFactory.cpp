@@ -15,9 +15,9 @@ std::shared_ptr<Enemy> EnemyFactory::createEnemy(Enemy::EnemyType enemyType, con
     } else if(enemyType == Enemy::EnemyType::goblin ) {
         strategy = std::make_shared<InspectionStrategy>(windowSize);
         enemy = std::make_shared<RangedGregarious>(textures, windowSize, strategy);
-    } else if(enemyType == Enemy::EnemyType::boss ) {
+    } /*else if(enemyType == Enemy::EnemyType::boss ) {
         strategy = std::make_shared<InspectionStrategy>(windowSize);
         enemy = std::make_shared<Boss>(textures, windowSize, strategy);
-    }
+    }*/
     return enemy;
 }

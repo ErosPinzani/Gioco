@@ -7,7 +7,6 @@
 Textures::ID toTextureID(RangedStWeapon::TypeObject type) {
     if (type == Objects::rangedWeaponSt)
         return Textures::???;
-    else return false;
 }
 
 RangedStWeapon::RangedStWeapon(const TextureHolder& textures, RangedStWeapon::TypeObject type): textures(textures), type(type) {

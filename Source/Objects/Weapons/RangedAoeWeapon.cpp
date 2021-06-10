@@ -7,7 +7,6 @@
 Textures::ID toTextureID(RangedAoeWeapon::TypeObject type) {
     if (type == Objects::rangedWeaponAoe)
         return Textures::???;
-    else return false;
 }
 
 RangedAoeWeapon::RangedAoeWeapon(const TextureHolder& textures, RangedAoeWeapon::TypeObject type): textures(textures), type(type) {

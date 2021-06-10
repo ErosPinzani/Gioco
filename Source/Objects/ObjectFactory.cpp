@@ -14,11 +14,10 @@ std::shared_ptr<Objects> ObjectFactory::createObject(Objects::TypeObject type, c
     } else if(type == Objects::TypeObject::meleeWeapon ) {
         object = std::make_shared<MeleeWeapon>(textures, MeleeWeapon::TypeObject::???);
     } else if( type == Objects::TypeObject::medikit ) {
-        object = std::make_shared<Medikit>(textures)
-    } else if( type == Objects::TypeObject::coins ) {
-        object = std::make_shared<Coins>(textures)
-    }
-
+        object = std::make_shared<Medikit>(textures);
+    } /*else if( type == Objects::TypeObject::coins ) {
+        object = std::make_shared<Coins>(textures);
+    }*/
     return object;
 }
 

@@ -6,7 +6,7 @@
 
 Medikit::Medikit(const TextureHolder &textures): textures(textures) {
 
-    textures = textures.get(Textures::healPack);
+    textures = textures.get(Textures::???);
     sprite.setTexture(texture);
 
     rect.setPosition(sf::Vector2f(300,300));
