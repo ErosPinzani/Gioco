@@ -11,7 +11,7 @@
 
 class MeleeWeapon: public Weapon {
 public:
-    MeleeWeapon(const TextureHolder& textures);
+    MeleeWeapon(const TextureHolder &textures, TypeObject object);
 
     void callFightAnimation();
 

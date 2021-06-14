@@ -21,7 +21,7 @@ Gregarious::Gregarious(const TextureHolder &textures, sf::Vector2u windowSize, s
 
     rect.setOrigin(32/2,32/2);
     sprite.setOrigin(32/2,32/2);
-    texture = textures.get(Textures::???);
+    texture = textures.get(Textures::gregarious);
     sprite.setTexture(texture);
     sprite.setTextureRect(sf::IntRect(0,0,32,32));
 }

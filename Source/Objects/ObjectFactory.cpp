@@ -8,13 +8,14 @@ std::shared_ptr<Objects> ObjectFactory::createObject(Objects::TypeObject type, c
     std::shared_ptr<Objects> object;
 
     if ( type == Objects::TypeObject::rangedWeaponSt ) {
-        object = std::make_shared<RangedStWeapon>(textures, RangedStWeapon::TypeObject::???);
+        object = std::make_shared<RangedStWeapon>(textures, RangedStWeapon::TypeObject::rangedWeaponSt);
     }else if(type == Objects::TypeObject::rangedWeaponAoe ) {
-        object = std::make_shared<RangedAoeWeapon>(textures, RangedAoeWeapon::TypeObject::???);
+        object = std::make_shared<RangedAoeWeapon>(textures, RangedAoeWeapon::TypeObject::rangedWeaponAoe);
     } else if(type == Objects::TypeObject::meleeWeapon ) {
-        object = std::make_shared<MeleeWeapon>(textures, MeleeWeapon::TypeObject::???);
+        object = std::make_shared<MeleeWeapon>(textures, MeleeWeapon::TypeObject::meleeWeapon);
     } else if( type == Objects::TypeObject::medikit ) {
-        object = std::make_shared<Medikit>(textures);
+        object = std::make_shared<Medikit>(textures, Medikit::TypeObject::medikit
+        );
     } /*else if( type == Objects::TypeObject::coins ) {
         object = std::make_shared<Coins>(textures);
     }*/

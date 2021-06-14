@@ -6,12 +6,12 @@
 
 Textures::ID toTextureID(Hero::HeroType heroType) {
     switch(heroType) {
-        case Hero::HeroType::close:
-            return Textures::???;
+        /*case Hero::HeroType::close:
+            return Textures::???;*/
         case Hero::HeroType::St:
-            return Textures::???;
+            return Textures::stHero;
         case Hero::HeroType::Aoe:
-            return Textures::???;
+            return Textures::aoeHero;
     }
 }
 

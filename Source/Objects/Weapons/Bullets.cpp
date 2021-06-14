@@ -7,9 +7,9 @@
 Textures::ID toTextureID(Bullets::BulletType bulletType) {
     switch(bulletType) {
         case Bullets::BulletType::aoeBullet:
-            return Textures::???;
+            return Textures::aoeBullet;
         case Bullets::BulletType::stBullet:
-            return Textures::???;
+            return Textures::stBullet;
     }
 }
 

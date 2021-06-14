@@ -13,11 +13,21 @@ namespace sf {
 namespace Textures {
     enum ID {
         //walls
+        stoneWall,
         //tiles
+        stoneTile,
         //hero
+        stHero,
+        aoeHero,
         //enemies
+        gregarious,
+        rangedGregarious,
         //bullets
+        aoeBullet,
+        stBullet,
+        rangedGregaariousBullet,
         //objects
+        medikitTexture
     };
 }
 

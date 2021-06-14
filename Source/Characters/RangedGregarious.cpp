@@ -24,7 +24,7 @@ RangedGregarious::RangedGregarious(const TextureHolder &textures, sf::Vector2u w
 
     rect.setOrigin(32/2,32/2);
     sprite.setOrigin(32/2,32/2);
-    texture = textures.get(Textures::???);
+    texture = textures.get(Textures::rangedGregarious);
     sprite.setTexture(texture);
     sprite.setTextureRect(sf::IntRect(0,0,32,32));
 }

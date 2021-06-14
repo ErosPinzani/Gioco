@@ -11,7 +11,7 @@
 
 class Medikit : public Consumables {
 public:
-    Medikit(const TextureHolder& textures);
+    Medikit(const TextureHolder &textures, TypeObject object);
     void update() final;
 
     int powerUp;

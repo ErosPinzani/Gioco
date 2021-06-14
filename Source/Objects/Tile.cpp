@@ -6,10 +6,10 @@
 
 Textures::ID toTextureID(Tile::BackGroundType type) {
     switch(type) {
-        case Tile::BackGroundType::labFloor:
-            return Textures::ID::???;
-        case Tile::BackGroundType ::woodFloor:
-            return Textures::ID ::???;
+        case Tile::BackGroundType::floor:
+            return Textures::ID::stoneTile;
+        case Tile::BackGroundType ::wall:
+            return Textures::ID ::stoneWall;
     }
 }
 

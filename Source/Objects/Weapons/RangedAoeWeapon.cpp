@@ -3,22 +3,22 @@
 //
 
 #include "../../../Include/Objects/Weapons/RangedAoeWeapon.h"
-
+/*
 Textures::ID toTextureID(RangedAoeWeapon::TypeObject type) {
     if (type == Objects::rangedWeaponAoe)
         return Textures::???;
-}
+}*/
 
 RangedAoeWeapon::RangedAoeWeapon(const TextureHolder& textures, RangedAoeWeapon::TypeObject type): textures(textures), type(type) {
     this->type = Objects::TypeObject::rangedWeaponAoe;
-    bulletType = Bullets::BulletType::???;
+    bulletType = Bullets::BulletType::aoeBullet;
 
     //counterLifeTime = 2000;   use it to have a life time
     counterLifeTime = 1;
     range = 400;
     power = 10;
 
-    texture = textures.get(toTextureID(type));
+    //texture = textures.get(toTextureID(type));
     sprite.setTexture(texture);
 
     rect.setPosition(sf::Vector2f(300,300));

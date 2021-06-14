@@ -4,9 +4,9 @@
 
 #include "../../Include/Objects/Medikit.h"
 
-Medikit::Medikit(const TextureHolder &textures): textures(textures) {
+Medikit::Medikit(const TextureHolder &textures, TypeObject object) : textures(textures) {
 
-    textures = textures.get(Textures::???);
+    texture = textures.get(Textures::medikitTexture);
     sprite.setTexture(texture);
 
     rect.setPosition(sf::Vector2f(300,300));
