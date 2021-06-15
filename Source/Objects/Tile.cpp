@@ -10,6 +10,10 @@ Textures::ID toTextureID(Tile::BackGroundType type) {
             return Textures::ID::stoneTile;
         case Tile::BackGroundType ::wall:
             return Textures::ID ::stoneWall;
+        case Tile::BackGroundType::baseFloor:
+            return Textures::ID::baseTile;
+        default:
+            return Textures::ID::baseTile;
     }
 }
 

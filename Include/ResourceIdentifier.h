@@ -15,6 +15,7 @@ namespace Textures {
         //walls
         stoneWall,
         //tiles
+        baseTile,
         stoneTile,
         //hero
         stHero,

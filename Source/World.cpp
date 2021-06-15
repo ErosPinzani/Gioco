@@ -10,7 +10,7 @@ World::World(std::shared_ptr<sf::RenderWindow> window, const TextureHolder &text
     do{
         x = generateRandom(24);
         y = generateRandom(24);
-    } while (map->tileMap[x*25+y]->backGround != Tile::labFloor);
+    } while (map->tileMap[x*25+y]->backGround != Tile::floor);
     player->rect.setPosition(x*64+16,y*64+16);
     //life text
     mainFont.loadFromFile("???");
@@ -31,7 +31,7 @@ void World::createEnemies() {
         do{
             x = generateRandom(24);
             y = generateRandom(24);
-        } while (map->tileMap[x*25+y]->backGround != Tile::labFloor && map->tileMap[x*25+y]->backGround != Tile::woodFloor);
+        } while (map->tileMap[x*25+y]->backGround != Tile::floor);
         enemy->rect.setPosition(x*64+16,y*64+16);
         enemyArray.emplace_back(enemy);
     }
@@ -41,7 +41,7 @@ void World::createEnemies() {
         do{
             x = generateRandom(24);
             y = generateRandom(24);
-        } while (map->tileMap[x*25+y]->backGround != Tile::labFloor && map->tileMap[x*25+y]->backGround != Tile::woodFloor);
+        } while (map->tileMap[x*25+y]->backGround != Tile::floor);
         enemy->rect.setPosition(x*64+16,y*64+16);
         enemyArray.emplace_back(enemy);
     }
@@ -54,7 +54,7 @@ void World::createObjects() {
     do{
         x = generateRandom(24);
         y = generateRandom(24);
-    } while (map->tileMap[x*25+y]->backGround != Tile::woodFloor);
+    } while (map->tileMap[x*25+y]->backGround != Tile::floor);
     medikit->setPosition(sf::Vector2f(x*64+16,y*64+16));
 
     collectableObject.emplace_back(medikit);
@@ -199,7 +199,7 @@ void World::collisionWithMap() {
     for(auto iterMap = map->tileMap.begin(); iterMap != map->tileMap.end(); iterMap++) {
 
         //if tile is a wall
-        if(map->tileMap[counterMap]->backGround == Tile::BackGroundType::metalWall) {
+        if(map->tileMap[counterMap]->backGround == Tile::BackGroundType::wall) {
             int counterEnemy = 0;
             //iter on enemies
             for(auto iterEnemy = enemyArray.begin(); iterEnemy != enemyArray.end(); iterEnemy++) {

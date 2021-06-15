@@ -183,7 +183,6 @@ void Game::update(sf::Time deltaTime) {
 }
 
 void Game::loadTextures() {
-
     textureHolder.load(Textures::stoneWall, "Resources/WallTile.png");
     textureHolder.load(Textures::stoneTile, "Resources/FloorTile.png");
     textureHolder.load(Textures::stHero, "Resources/StHero.png");
@@ -194,6 +193,7 @@ void Game::loadTextures() {
     textureHolder.load(Textures::stBullet, "Resources/StBullet.png");
     textureHolder.load(Textures::rangedGregaariousBullet, "Resources/RangedGregariousBullet.png");
     textureHolder.load(Textures::medikitTexture, "Resources/Medikit.png");
+    textureHolder.load(Textures::baseTile, "Resources/CustomBaseTile.png");
 }
 /*
 void Game::loadSound() {

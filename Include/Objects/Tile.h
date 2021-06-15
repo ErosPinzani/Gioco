@@ -15,7 +15,7 @@ public:
 
     enum BackGroundType {
         floor,
-
+        baseFloor,
         wall
     };
 
